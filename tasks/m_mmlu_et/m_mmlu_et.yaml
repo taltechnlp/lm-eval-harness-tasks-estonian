@@ -1,0 +1,21 @@
+tag:
+  - custom_things
+task: m_mmlu_et
+dataset_path: TalTechNLP/M_MMLU_et
+output_type: multiple_choice
+training_split: train
+validation_split: val
+test_split: test
+process_docs: !function utils.process_docs
+doc_to_text: "Küsimus: {{instruction}}\nVastusevariandid: {{choices}}\nVastus: "
+doc_to_target: answer
+doc_to_choice: choices
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: acc_norm
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0

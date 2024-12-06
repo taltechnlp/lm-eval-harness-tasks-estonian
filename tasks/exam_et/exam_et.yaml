@@ -1,0 +1,22 @@
+tag:
+  - custom_things
+task: exam_et
+dataset_path: TalTechNLP/exam_et
+output_type: multiple_choice
+validation_split: train
+test_split: train
+fewshot_split: train
+process_docs: !function utils.process_docs
+doc_to_text: "Küsimus: {{küsimus}}\nVastusevariandid: {{vastusevariandid}}\nVastus:"
+doc_to_target: vastus
+doc_to_choice: vastusevariandid
+num_fewshot: 5
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: acc_norm
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0
