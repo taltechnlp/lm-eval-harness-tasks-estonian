@@ -1,0 +1,22 @@
+task: paevakaja_et
+dataset_path: TalTechNLP/paevakaja_speakers
+dataset_name: null
+output_type: generate_until
+generation_kwargs:
+  until:
+    - "\n\n\n\n\n"
+  do_sample: false
+  temperature: 0.0
+training_split: null
+validation_split: null
+test_split: train
+fewshot_split: null
+doc_to_text: "Uudistesaate transkriptsioon: {{text}}\nSaates kõnelejad:"
+doc_to_target: speakers
+target_delimiter: " "
+num_fewshot: 5
+should_decontaminate: false
+doc_to_decontamination_query: sentence
+
+metadata:
+  version: 1.0
