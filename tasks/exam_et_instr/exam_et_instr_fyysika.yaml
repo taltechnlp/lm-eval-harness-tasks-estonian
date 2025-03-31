@@ -1,0 +1,24 @@
+tag:
+  - exam_et_instr_tag
+task: exam_et_instr_fyysika
+dataset_path: TalTechNLP/exam_et
+dataset_name: "füüsika"
+output_type: generate_until
+validation_split: train
+test_split: train
+process_docs: !function utils.process_docs
+doc_to_text: tekst
+doc_to_target: vastus
+num_fewshot: 0
+generation_kwargs:
+  until:
+    - "\n\n\n\n\n"
+  max_gen_toks: 100
+filter_list:
+- filter:
+  - function: regex
+    regex_pattern: "Vastus: ([A-Z])"
+  - function: take_first
+  name: nimi
+metadata:
+  version: 1.0

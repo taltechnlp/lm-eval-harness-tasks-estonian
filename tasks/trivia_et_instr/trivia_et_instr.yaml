@@ -1,0 +1,24 @@
+tag:
+  - custom_things
+task: trivia_et_instr
+dataset_path: TalTechNLP/trivia_et
+output_type: generate_until
+validation_split: train
+test_split: train
+fewshot_split: train
+process_docs: !function utils.process_docs
+doc_to_text: "Sa oled ekspert ning vastad küsimustele korrektselt. Sulle antakse küsimus koos vastusevariantidega. Anna vastus kujul: “Vastus: X”, kus X on kas A, B, C või D. Ära kirjuta midagi muud! Vasta eesti keeles!\nKüsimus: {{küsimus}}\nVastusevariandid:\n{{vastusevariandid}}"
+doc_to_target: vastus
+num_fewshot: 0
+generation_kwargs:
+  until:
+    - "\n\n"
+  max_gen_toks: 100
+filter_list:
+- filter:
+  - function: regex
+    regex_pattern: "Vastus: ([A-Z])"
+  - function: take_first
+  name: nimi
+metadata:
+  version: 1.0
