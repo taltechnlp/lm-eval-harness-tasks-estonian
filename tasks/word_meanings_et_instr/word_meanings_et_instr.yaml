@@ -1,0 +1,24 @@
+tag:
+  - custom_things
+task: word_meanings_et_instr
+dataset_path: TalTechNLP/word_meanings_et
+output_type: generate_until
+validation_split: test
+test_split: test
+process_docs: !function utils.process_docs
+doc_to_text: "Sa oled sõnade teadmise ekspert. Sulle antakse sõna definitsioon ning sina pead tagastama sõna, mida see definitsioon kirjeldab. Anna vastus kujul: \"Vastus: {definitsioonile_vastav_sõna}\". Vasta ainult vastusega.\nSõna definitsioon(id): {{definition}}"
+doc_to_target: words
+num_fewshot: 0
+generation_kwargs:
+  until:
+    - "\n\n\n\n\n"
+  max_gen_toks: 100
+filter_list:
+- filter:
+  - function: regex
+    regex_pattern: "(?:\\s*Vastus:)?\\s*([A-Za-z0-9ÄÖÜÕäöüõšž-]+(?: +[A-Za-z0-9ÄÖÜÕäöüõšž-]+)*)"
+  - function: lowercase
+  - function: take_first
+  name: nimi
+metadata:
+  version: 1.0

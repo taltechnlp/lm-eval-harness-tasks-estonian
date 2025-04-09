@@ -5,14 +5,18 @@ dataset_path: TalTechNLP/inflection_et
 output_type: generate_until
 validation_split: train
 test_split: train
-fewshot_split: train
 process_docs: !function utils.process_docs
-doc_to_text: "ainsuse nimetav: {{noun_phrase}}\n{{plurality}} {{case}}:"
+doc_to_text: "Sa oled eesti keele ekspert. Sulle antakse sõnapaar ainsuse nimetavas käändes ja sinu ülesandeks on käänata see etteantud käändesse. Jälgi, kas käänet on küsitud ainsuses või mitmuses. Anna vastus kujul: \"Vastus: {käänatud sõnapaar}\"\nSõnapaar ainsuse nimetavas käändes on: {{noun_phrase}}\nKääna see käändesse: {{plurality}} {{case}}"
 doc_to_target: inflection
-num_fewshot: 5
-metadata:
-  version: 1.0
+num_fewshot: 0
 generation_kwargs:
   until:
-    - "\n\n"
-  max_gen_toks: 100
+    - "\n\n\n\n\n"
+filter_list:
+- filter:
+  - function: regex
+    regex_pattern: "Vastus: (([a-zA-ZÄÖÜÕŠŽäöüõšž]*)(\\s([a-zA-ZÖÄÜÕŽŠöäüõžš]*))*)"
+  - function: take_first
+  name: nimi
+metadata:
+  version: 1.0

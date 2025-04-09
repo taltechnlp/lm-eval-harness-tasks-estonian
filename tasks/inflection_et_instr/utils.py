@@ -8,3 +8,13 @@ def process_docs(dataset: datasets.Dataset):
       return doc
 
     return dataset.map(_helper) # returns back a datasets.Dataset object
+
+def test(items):
+    """
+    # passthrough for efficiency
+    """
+    print(items)
+    return items
+  
+def test_agg(items):
+    return 0.77

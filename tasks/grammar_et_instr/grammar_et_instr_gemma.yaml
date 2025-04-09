@@ -1,0 +1,18 @@
+tag:
+  - custom_things
+task: grammar_et_instr_gemma
+dataset_path: TalTechNLP/grammar_et
+output_type: generate_until
+validation_split: train
+test_split: train
+fewshot_split: train
+process_docs: !function utils.process_docs
+doc_to_text: "Sa oled eesti keele ekspert. Sulle antakse ette eestikeelsed laused, kus võivad esineda grammatikavead. Tagasta korrektne lause, kus vead on parandatud. Juhul kui etteantud lause on juba õige, siis tagastagi see sama lause. Vasta ainult lausega.\nOriginaalne: {{original}}"
+doc_to_target: correct
+num_fewshot: 0
+metadata:
+  version: 1.0
+generation_kwargs:
+  until:
+    - "\n\n"
+  max_gen_toks: 100

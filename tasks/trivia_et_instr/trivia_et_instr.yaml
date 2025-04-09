@@ -12,7 +12,7 @@ doc_to_target: vastus
 num_fewshot: 0
 generation_kwargs:
   until:
-    - "\n\n"
+    - "\n\n\n\n\n"
   max_gen_toks: 100
 filter_list:
 - filter:

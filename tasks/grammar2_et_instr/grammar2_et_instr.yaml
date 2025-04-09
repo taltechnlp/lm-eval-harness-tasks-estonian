@@ -1,18 +1,33 @@
 tag:
   - custom_things
-task: grammar2_et
+task: grammar2_et_instr
 dataset_path: TalTechNLP/grammar2_et
 output_type: generate_until
 validation_split: train
 test_split: train
-fewshot_split: train
 process_docs: !function utils.process_docs
-doc_to_text: "Originaalne: {{original}}"
+doc_to_text: "Sa oled eesti keele ekspert. Sulle antakse ette eestikeelsed laused, kus võivad esineda grammatikavead. Tagasta korrektne lause, kus vead on parandatud. Juhul kui etteantud lause on juba õige, siis tagastagi see sama lause. Vasta ainult lausega!\nOriginaalne: {{original}}"
 doc_to_target: correct
-num_fewshot: 5
+num_fewshot: 0
 metadata:
   version: 1.0
 generation_kwargs:
   until:
-    - "\n\n"
-  max_gen_toks: 100
+    - "\n\n\n\n\n"
+  max_gen_toks: 1000
+filter_list:
+- filter:
+  - function: regex
+    regex_pattern: "\\s*(.*)\\s*"
+  - function: take_first
+  name: nimi
+metric_list:
+  - metric: !function utils.lev
+    higher_is_better: true
+    aggregation: !function utils.lev_agg
+  - metric: !function utils.precise
+    higher_is_better: true
+    aggregation: !function utils.precise_agg
+  - metric: !function utils.raw_lev
+    higher_is_better: false
+    aggregation: !function utils.raw_lev_agg

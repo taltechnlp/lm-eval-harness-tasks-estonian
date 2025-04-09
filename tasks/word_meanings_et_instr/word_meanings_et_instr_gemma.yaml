@@ -1,0 +1,18 @@
+tag:
+  - custom_things
+task: word_meanings_et_instr_gemma
+dataset_path: TalTechNLP/word_meanings_et
+output_type: generate_until
+validation_split: train
+test_split: train
+fewshot_split: train
+process_docs: !function utils.process_docs
+doc_to_text: "Sa oled eesti sõnatähenduste ekspert. Sulle antakse ette sõna tähendus(ed) ja sinu ülesandeks on öelda, mis sõnale/sõnadele need kõige paremini vastavad. Õige vastus on enamasti üks sõna, kuid võib olla ka mitmesõnaline (näiteks Aafrika punane tee). Vasta ainult seletusele sobiva vastusega.\nSõna definitsioon(id): {{definition}}"
+doc_to_target: word
+num_fewshot: 0
+metadata:
+  version: 1.0
+generation_kwargs:
+  until:
+    - "\n\n"
+  max_gen_toks: 100
