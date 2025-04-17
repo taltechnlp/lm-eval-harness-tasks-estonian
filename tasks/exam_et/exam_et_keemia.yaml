@@ -1,0 +1,3 @@
+include: exam_et.yaml
+task: exam_et_bioloogia
+dataset_name: bioloogia

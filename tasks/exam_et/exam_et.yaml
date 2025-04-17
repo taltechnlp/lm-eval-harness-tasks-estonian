@@ -1,6 +1,5 @@
 tag:
-  - custom_things
-task: exam_et
+  - exam_et_tag
 dataset_path: TalTechNLP/exam_et
 output_type: multiple_choice
 validation_split: train

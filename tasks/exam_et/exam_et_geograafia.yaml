@@ -1,0 +1,3 @@
+include: exam_et.yaml
+task: exam_et_keemia
+dataset_name: keemia

@@ -1,0 +1,3 @@
+include: exam_et.yaml
+task: exam_et_eesti_keel_gymn
+dataset_name: "eesti keel teise keelena (gümnaasium)"
