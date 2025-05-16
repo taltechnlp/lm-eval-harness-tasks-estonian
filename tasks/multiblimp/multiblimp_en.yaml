@@ -1,0 +1,3 @@
+include: _template_yaml.txt
+dataset_name: eng
+task: multiblimp_en
