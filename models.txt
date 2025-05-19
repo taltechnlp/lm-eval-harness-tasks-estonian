@@ -1,0 +1,20 @@
+tartuNLP/Llammas-base 1V
+google/gemma-2-9b,dtype=bfloat16 1V
+google/gemma-2-27b,dtype=bfloat16,parallelize=True 2S
+meta-llama/Meta-Llama-3.1-8B 1V
+meta-llama/Meta-Llama-3.1-70B,parallelize=True 2S
+Qwen/Qwen2-72B,parallelize=True 2S
+mistralai/Mistral-7B-v0.3 1V
+mistralai/Mistral-Nemo-Base-2407 1S
+mistralai/Mixtral-8x7B-v0.1,parallelize=True 2S
+
+tartuNLP/Llammas 1V
+google/gemma-2-9b-it,dtype=bfloat16 1V
+google/gemma-2-27b-it,dtype=bfloat16,parallelize=True 2S
+meta-llama/Llama-3.1-8B-Instruct 1V
+meta-llama/Llama-3.1-70B-Instruct,parallelize=True 2S
+Qwen/Qwen2-72B-Instruct,parallelize=True 2S
+mistralai/Mistral-7B-Instruct-v0.3 1V
+mistralai/Mistral-Nemo-Instruct-2407 1S
+mistralai/Mixtral-8x7B-Instruct-v0.1,parallelize=True 2S
+neulab/Pangea-7B 1V

@@ -1,0 +1,3 @@
+include: mmlu_et.yaml
+task: mmlu_et_college_computer_science
+dataset_name: college_computer_science

@@ -1,3 +1,5 @@
+tag:
+  - instr_tag_est
 task: errnews_et_instr
 dataset_path: TalTechNLP/ERRnews
 dataset_name: null

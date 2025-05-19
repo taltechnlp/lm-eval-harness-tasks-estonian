@@ -1,0 +1,3 @@
+include: mmlu_et.yaml
+task: mmlu_et_prehistory
+dataset_name: prehistory

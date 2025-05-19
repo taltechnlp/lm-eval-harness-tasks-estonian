@@ -1,3 +1,5 @@
+tag:
+  - instr_tag_est
 task: dialogsum_et_instr
 dataset_path: TalTechNLP/dialogsum_ee
 dataset_name: null

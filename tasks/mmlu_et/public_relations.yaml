@@ -1,0 +1,3 @@
+include: mmlu_et.yaml
+task: mmlu_et_public_relations
+dataset_name: public_relations

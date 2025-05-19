@@ -1,14 +1,14 @@
 tag:
-  - custom_things
-task: mmlu_et
+  - base_tag_est
+  - mmlu_et_tag
 dataset_path: TalTechNLP/MMLU_et
 output_type: multiple_choice
-validation_split: validation
-test_split: test
+test_split: train
 process_docs: !function utils.process_docs
 doc_to_text: "Küsimus: {{question}}\nVastusevariandid: {{choices}}\nVastus: "
 doc_to_target: answer
 doc_to_choice: choices
+num_fewshot: 5
 metric_list:
   - metric: acc
     aggregation: mean

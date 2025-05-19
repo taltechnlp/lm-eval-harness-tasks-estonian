@@ -1,10 +1,12 @@
+tag:
+  - instr_tag_est
 task: paevakaja_et_instr
 dataset_path: TalTechNLP/paevakaja_speakers
 dataset_name: null
 output_type: generate_until
 generation_kwargs:
   until:
-    - "\n\n\n\n\ndiewmdimewidmwe"
+    - "\n\n\n\n\n"
   do_sample: false
   temperature: 0.0
 training_split: null

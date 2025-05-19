@@ -1,0 +1,3 @@
+include: mmlu_et.yaml
+task: mmlu_et_elementary_mathematics
+dataset_name: elementary_mathematics

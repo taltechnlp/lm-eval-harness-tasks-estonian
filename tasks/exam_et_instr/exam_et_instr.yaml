@@ -1,5 +1,6 @@
 tag:
   - exam_et_instr_tag
+  - instr_tag_est
 dataset_path: TalTechNLP/exam_et
 output_type: generate_until
 validation_split: train

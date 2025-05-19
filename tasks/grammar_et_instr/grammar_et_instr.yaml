@@ -1,5 +1,5 @@
 tag:
-  - custom_things
+  - base_tag_est
 task: grammar_et_instr
 dataset_path: TalTechNLP/grammar_et
 output_type: generate_until

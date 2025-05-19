@@ -1,5 +1,6 @@
 tag:
   - exam_et_tag
+  - base_tag_est
 dataset_path: TalTechNLP/exam_et
 output_type: multiple_choice
 validation_split: train

@@ -1,5 +1,5 @@
 tag:
-  - custom_things
+  - base_tag_est
 task: mmlu_pro_et
 dataset_path: TalTechNLP/MMLU_Pro_et
 output_type: multiple_choice

@@ -1,5 +1,5 @@
 tag:
-  - custom_things
+  - instr_tag_est
 task: trivia_et_instr
 dataset_path: TalTechNLP/trivia_et
 output_type: generate_until

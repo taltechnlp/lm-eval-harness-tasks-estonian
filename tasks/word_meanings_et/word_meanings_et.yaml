@@ -1,5 +1,5 @@
 tag:
-  - custom_things
+  - base_tag_est
 task: word_meanings_et
 dataset_path: TalTechNLP/word_meanings_et
 output_type: generate_until

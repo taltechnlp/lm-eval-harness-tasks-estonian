@@ -1,5 +1,5 @@
 tag:
-  - custom_things
+  - base_tag_est
 task: inflection_et
 dataset_path: TalTechNLP/inflection_et
 output_type: generate_until

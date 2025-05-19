@@ -1,5 +1,5 @@
 tag:
-  - custom_things
+  - base_tag_est
 task: trivia_et
 dataset_path: TalTechNLP/trivia_et
 output_type: multiple_choice

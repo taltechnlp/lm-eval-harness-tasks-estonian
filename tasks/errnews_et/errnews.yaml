@@ -1,3 +1,5 @@
+tag:
+  - base_tag_est
 task: errnews_et
 dataset_path: TalTechNLP/ERRnews
 dataset_name: null

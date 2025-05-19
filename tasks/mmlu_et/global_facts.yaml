@@ -1,0 +1,3 @@
+include: mmlu_et.yaml
+task: mmlu_et_global_facts
+dataset_name: global_facts

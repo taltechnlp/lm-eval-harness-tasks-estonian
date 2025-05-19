@@ -1,0 +1,3 @@
+include: mmlu_et.yaml
+task: mmlu_et_machine_learning
+dataset_name: machine_learning

@@ -1,3 +1,5 @@
+tag:
+  - base_tag_est
 task: paevakaja_et
 dataset_path: TalTechNLP/paevakaja_speakers
 dataset_name: null

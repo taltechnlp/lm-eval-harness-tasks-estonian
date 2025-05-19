@@ -1,0 +1,3 @@
+include: mmlu_et.yaml
+task: mmlu_et_high_school_government_and_politics
+dataset_name: high_school_government_and_politics

@@ -1,0 +1,3 @@
+include: mmlu_et.yaml
+task: mmlu_et_human_aging
+dataset_name: human_aging

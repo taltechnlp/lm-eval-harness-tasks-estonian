@@ -1,5 +1,5 @@
 tag:
-  - custom_things
+  - instr_tag_est
 task: word_meanings_et_instr
 dataset_path: TalTechNLP/word_meanings_et
 output_type: generate_until
