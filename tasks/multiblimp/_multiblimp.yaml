@@ -1,0 +1,13 @@
+group: multiblimp
+task:
+  - multiblimp_est
+  - multiblimp_eng
+aggregate_metric_list:
+  - aggregation: mean
+    metric: acc
+    weight_by_size: true
+  - aggregation: mean
+    metric: acc_norm
+    weight_by_size: true
+metadata:
+  version: 0.0
