@@ -55,6 +55,8 @@ def process_results_speakers(a, b):
                 cache += ch
     if cache:
         extracted.append(cache)
+    if not extracted:
+        extracted = list(set(b[0].split("\n")[0].strip(" .").split(", ")))
     print("Model output:")
     print(b)
     print("Extracted list:")
