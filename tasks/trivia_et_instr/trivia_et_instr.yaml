@@ -1,5 +1,6 @@
 tag:
   - instr_tag_est
+  - lrec2026_instr_tag
 task: trivia_et_instr
 dataset_path: TalTechNLP/trivia_et
 output_type: generate_until
@@ -13,7 +14,7 @@ num_fewshot: 0
 generation_kwargs:
   until:
     - "\n\n\n\n\n"
-  max_gen_toks: 100
+  max_gen_toks: 2000
 filter_list:
 - filter:
   - function: regex

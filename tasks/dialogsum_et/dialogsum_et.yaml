@@ -1,7 +1,7 @@
 tag:
   - base_tag_est
 task: dialogsum_et
-dataset_path: TalTechNLP/dialogsum
+dataset_path: TalTechNLP/dialogsum_ee
 dataset_name: null
 output_type: generate_until
 generation_kwargs:

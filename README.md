@@ -31,12 +31,28 @@ Assuming that one wants to use some job scheduler, then the above command will h
 #SBATCH --constraint=A100-40
 
 source /home/username/nlp_project/venv/bin/activate
-lm_eval --model hf --model_args pretrained=tartuNLP/Llammas,device=cuda:0 --tasks instr_tag_est --include_path ~/lm-eval-tasks
+lm_eval --model hf --model_args pretrained=tartuNLP/Llammas,device=cuda:0 --tasks instr_tag_est --include_path tasks
 ```
 ### Example command with extra options
 A more complete command with some additional options is shown below
 ```
-lm_eval --model hf --model_args pretrained=tartuNLP/Llammas-base,device=cuda:0 --tasks base_tag_est --include_path ~/lm-eval-tasks --batch_size 1 --log_samples --output_path results --verbosity DEBUG --trust_remote_code --limit 10
+lm_eval --model hf --model_args pretrained=tartuNLP/Llammas-base,device=cuda:0 --tasks base_tag_est --include_path tasks --batch_size 1 --log_samples --output_path results --verbosity DEBUG --trust_remote_code --limit 10
 ```
 ### GPUs required for various models
 In the file called `models.txt` there names for various models along with extra parameters required by those models (for example for Gemma it is necessary to specify that it should use 16 bit floats) as well as suggested number and type of GPUs (V refers to A100-40GB and S refers to A100-80GB, so 2S would mean that it is suggested to use two A100-80GB GPUs). 
+
+
+### Use API (e.g. OpenRouter):
+
+The following example runs 7 benchmarks tasks described in the paper: Estonian Native Large Language Model Benchmark (submitted to LREC 2026).
+It uses Gemini-2.5-flash-preview via OpenRouter.
+
+```
+model="google/gemini-2.5-flash-preview-09-2025"; \
+system_instr="Sa oled küsimustele vastamise ekspert. Sulle antakse ette ülesanne kas küsimuse vormis või ülesandena. Sinu ülesandeks on valida õige vastus ja vastata ainult sellega."; \
+tasks="lrec2026_instr_tag"; \
+lm-eval \
+      --model "openai-chat-completions" \
+      --model_args "base_url=https://openrouter.ai/api/v1/chat/completions,api_key=${OPENAI_API_KEY},model=${model},num_concurrent=10" \
+      --tasks $tasks  --log_samples --output_path  outputs --include_path tasks  --apply_chat_template   --batch_size 1  --system_instruction "${system_instr}"  --gen_kwargs "reasoning_effort=minimal" 
+```

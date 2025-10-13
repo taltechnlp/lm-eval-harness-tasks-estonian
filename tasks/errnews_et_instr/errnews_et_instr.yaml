@@ -1,5 +1,6 @@
 tag:
   - instr_tag_est
+  - lrec2026_instr_tag
 task: errnews_et_instr
 dataset_path: TalTechNLP/ERRnews
 dataset_name: null

@@ -1,5 +1,6 @@
 tag:
   - base_tag_est
+  - lrec2026_instr_tag
 task: grammar_et_instr
 dataset_path: TalTechNLP/grammar_et
 output_type: generate_until
@@ -14,7 +15,7 @@ metadata:
 generation_kwargs:
   until:
     - "\n\n\n\n\n"
-  max_gen_toks: 1000
+  max_gen_toks: 2000
 filter_list:
 - filter:
   - function: regex

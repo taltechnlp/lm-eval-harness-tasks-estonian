@@ -1,5 +1,6 @@
 tag:
   - instr_tag_est
+  - lrec2026_instr_tag
 task: word_meanings_et_instr
 dataset_path: TalTechNLP/word_meanings_et
 output_type: generate_until
@@ -12,11 +13,11 @@ num_fewshot: 0
 generation_kwargs:
   until:
     - "\n\n\n\n\n"
-  max_gen_toks: 100
+  max_gen_toks: 2000
 filter_list:
 - filter:
   - function: regex
-    regex_pattern: "(?:\\s*Vastus:)?\\s*([A-Za-z0-9ÄÖÜÕäöüõšž-]+(?: +[A-Za-z0-9ÄÖÜÕäöüõšž-]+)*)"
+    regex_pattern: "(?:\\s*Vastus:)?\\s*\\{?([A-Za-z0-9ÄÖÜÕäöüõšž-]+(?: +[A-Za-z0-9ÄÖÜÕäöüõšž-]+)*)\\}?"
   - function: lowercase
   - function: take_first
   name: nimi
